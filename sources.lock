@@ -1,0 +1,169 @@
+{
+  "comment": "Vendored upstream skills. Edit mappings here; scripts/sync_upstream.py refreshes copies and bumps sha.",
+  "sources": [
+    {
+      "name": "alirezarezvani-claude-skills",
+      "repo": "https://github.com/alirezarezvani/claude-skills.git",
+      "branch": "main",
+      "sha": "19392f7a08264ed00486a251f5b2098321771f94",
+      "mappings": [
+        {
+          "from": "engineering-team/a11y-audit/skills/a11y-audit",
+          "to": "plugins/design/skills/a11y-audit"
+        },
+        {
+          "from": "engineering/skills/agent-workflow-designer",
+          "to": "plugins/engineering/skills/agent-workflow-designer"
+        },
+        {
+          "from": "marketing-skill/skills/analytics-tracking",
+          "to": "plugins/growth/skills/analytics-tracking"
+        },
+        {
+          "from": "engineering/skills/api-design-reviewer",
+          "to": "plugins/engineering/skills/api-design-reviewer"
+        },
+        {
+          "from": "engineering/skills/api-test-suite-builder",
+          "to": "plugins/engineering/skills/api-test-suite-builder"
+        },
+        {
+          "from": "marketing-skill/skills/app-store-optimization",
+          "to": "plugins/growth/skills/app-store-optimization"
+        },
+        {
+          "from": "product-team/apple-hig-expert/skills/apple-hig-expert",
+          "to": "plugins/design/skills/apple-hig-expert"
+        },
+        {
+          "from": "marketing-skill/skills/brand-guidelines",
+          "to": "plugins/design/skills/brand-guidelines"
+        },
+        {
+          "from": "marketing-skill/skills/churn-prevention",
+          "to": "plugins/growth/skills/churn-prevention"
+        },
+        {
+          "from": "engineering/skills/ci-cd-pipeline-builder",
+          "to": "plugins/engineering/skills/ci-cd-pipeline-builder"
+        },
+        {
+          "from": "product-team/skills/competitive-teardown",
+          "to": "plugins/product/skills/competitive-teardown"
+        },
+        {
+          "from": "marketing-skill/skills/copywriting",
+          "to": "plugins/landing-cro/skills/copywriting"
+        },
+        {
+          "from": "engineering/skills/database-designer",
+          "to": "plugins/engineering/skills/database-designer"
+        },
+        {
+          "from": "marketing-skill/skills/email-sequence",
+          "to": "plugins/growth/skills/email-sequence"
+        },
+        {
+          "from": "engineering/skills/env-secrets-manager",
+          "to": "plugins/engineering/skills/env-secrets-manager"
+        },
+        {
+          "from": "engineering-team/skills/epic-design",
+          "to": "plugins/design/skills/epic-design"
+        },
+        {
+          "from": "product-team/skills/experiment-designer",
+          "to": "plugins/product/skills/experiment-designer"
+        },
+        {
+          "from": "engineering/skills/git-worktree-manager",
+          "to": "plugins/engineering/skills/git-worktree-manager"
+        },
+        {
+          "from": "product-team/skills/landing-page-generator",
+          "to": "plugins/landing-cro/skills/landing-page-generator"
+        },
+        {
+          "from": "marketing-skill/skills/launch-strategy",
+          "to": "plugins/growth/skills/launch-strategy"
+        },
+        {
+          "from": "marketing-skill/skills/marketing-psychology",
+          "to": "plugins/landing-cro/skills/marketing-psychology"
+        },
+        {
+          "from": "marketing-skill/skills/marketing-strategy-pmm",
+          "to": "plugins/growth/skills/marketing-strategy-pmm"
+        },
+        {
+          "from": "engineering/skills/migration-architect",
+          "to": "plugins/engineering/skills/migration-architect"
+        },
+        {
+          "from": "engineering/skills/monorepo-navigator",
+          "to": "plugins/engineering/skills/monorepo-navigator"
+        },
+        {
+          "from": "marketing-skill/skills/onboarding-cro",
+          "to": "plugins/landing-cro/skills/onboarding-cro"
+        },
+        {
+          "from": "marketing-skill/skills/page-cro",
+          "to": "plugins/landing-cro/skills/page-cro"
+        },
+        {
+          "from": "engineering/skills/pr-review-expert",
+          "to": "plugins/engineering/skills/pr-review-expert"
+        },
+        {
+          "from": "marketing-skill/skills/pricing-strategy",
+          "to": "plugins/growth/skills/pricing-strategy"
+        },
+        {
+          "from": "product-team/skills/product-analytics",
+          "to": "plugins/product/skills/product-analytics"
+        },
+        {
+          "from": "product-team/skills/product-discovery",
+          "to": "plugins/product/skills/product-discovery"
+        },
+        {
+          "from": "product-team/skills/product-manager-toolkit",
+          "to": "plugins/product/skills/product-manager-toolkit"
+        },
+        {
+          "from": "product-team/skills/product-strategist",
+          "to": "plugins/product/skills/product-strategist"
+        },
+        {
+          "from": "engineering-team/skills/senior-frontend",
+          "to": "plugins/design/skills/senior-frontend"
+        },
+        {
+          "from": "marketing-skill/skills/seo-audit",
+          "to": "plugins/growth/skills/seo-audit"
+        },
+        {
+          "from": "engineering/skills/spec-driven-workflow",
+          "to": "plugins/engineering/skills/spec-driven-workflow"
+        },
+        {
+          "from": "engineering/skills/sql-database-assistant",
+          "to": "plugins/engineering/skills/sql-database-assistant"
+        },
+        {
+          "from": "engineering/skills/tech-debt-tracker",
+          "to": "plugins/engineering/skills/tech-debt-tracker"
+        },
+        {
+          "from": "product-team/skills/ui-design-system",
+          "to": "plugins/design/skills/ui-design-system"
+        },
+        {
+          "from": "product-team/skills/ux-researcher-designer",
+          "to": "plugins/design/skills/ux-researcher-designer"
+        }
+      ]
+    }
+  ]
+}

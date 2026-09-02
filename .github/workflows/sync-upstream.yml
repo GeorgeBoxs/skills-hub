@@ -1,0 +1,41 @@
+# Weekly upstream sync: refreshes vendored skills per sources.lock and opens
+# a review PR. Merging that PR is the release — consumer repos pick it up via
+# marketplace auto-update.
+#
+# Note: with the default GITHUB_TOKEN, workflows do NOT trigger on the created
+# PR. This repo has no CI, so that is fine; if CI is added later, switch to a
+# fine-grained PAT (contents: write + pull-requests: write) via `token:`.
+name: Sync upstream skills
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refresh vendored skills
+        run: python3 scripts/sync_upstream.py
+
+      - name: Open review PR
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: sync/upstream-skills
+          delete-branch: true
+          commit-message: "sync: refresh vendored upstream skills"
+          title: "sync: refresh vendored upstream skills"
+          body: |
+            Automated weekly sync from pinned upstreams.
+
+            - `sources.lock` diff shows the SHA bump per source.
+            - `SYNC_NOTES.md` lists warnings (e.g. skills removed upstream).
+            - Review the skill diffs: **merging this PR releases the changes
+              to every consumer repo** via marketplace auto-update.

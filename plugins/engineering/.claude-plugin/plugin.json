@@ -1,0 +1,5 @@
+{
+  "name": "engineering",
+  "description": "Engineering skills: agent-workflow-designer, api-design-reviewer, api-test-suite-builder, ci-cd-pipeline-builder, database-designer, sql-database-assistant, migration-architect, monorepo-navigator, env-secrets-manager, git-worktree-manager, pr-review-expert, spec-driven-workflow, tech-debt-tracker.",
+  "author": { "name": "George Korobko", "url": "https://github.com/GeorgeBoxs" }
+}
