@@ -12,6 +12,10 @@
           "to": "plugins/design/skills/a11y-audit"
         },
         {
+          "from": "marketing-skill/skills/aeo",
+          "to": "plugins/growth/skills/aeo"
+        },
+        {
           "from": "engineering/skills/agent-workflow-designer",
           "to": "plugins/engineering/skills/agent-workflow-designer"
         },
@@ -52,6 +56,10 @@
           "to": "plugins/product/skills/competitive-teardown"
         },
         {
+          "from": "marketing-skill/skills/content-strategy",
+          "to": "plugins/growth/skills/content-strategy"
+        },
+        {
           "from": "marketing-skill/skills/copywriting",
           "to": "plugins/landing-cro/skills/copywriting"
         },
@@ -74,6 +82,10 @@
         {
           "from": "product-team/skills/experiment-designer",
           "to": "plugins/product/skills/experiment-designer"
+        },
+        {
+          "from": "marketing-skill/skills/form-cro",
+          "to": "plugins/landing-cro/skills/form-cro"
         },
         {
           "from": "engineering/skills/git-worktree-manager",
@@ -136,12 +148,28 @@
           "to": "plugins/product/skills/product-strategist"
         },
         {
+          "from": "marketing-skill/skills/programmatic-seo",
+          "to": "plugins/growth/skills/programmatic-seo"
+        },
+        {
+          "from": "marketing-skill/skills/referral-program",
+          "to": "plugins/growth/skills/referral-program"
+        },
+        {
+          "from": "marketing-skill/skills/schema-markup",
+          "to": "plugins/growth/skills/schema-markup"
+        },
+        {
           "from": "engineering-team/skills/senior-frontend",
           "to": "plugins/design/skills/senior-frontend"
         },
         {
           "from": "marketing-skill/skills/seo-audit",
           "to": "plugins/growth/skills/seo-audit"
+        },
+        {
+          "from": "marketing-skill/skills/signup-flow-cro",
+          "to": "plugins/landing-cro/skills/signup-flow-cro"
         },
         {
           "from": "engineering/skills/spec-driven-workflow",

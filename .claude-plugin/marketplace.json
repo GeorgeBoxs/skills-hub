@@ -8,7 +8,7 @@
   "homepage": "https://github.com/GeorgeBoxs/skills-hub",
   "repository": "https://github.com/GeorgeBoxs/skills-hub",
   "metadata": {
-    "description": "44 skills in 6 domain plugins. Versions intentionally omitted so consumers auto-update by git SHA on every merged commit."
+    "description": "51 skills in 6 domain plugins. Versions intentionally omitted so consumers auto-update by git SHA on every merged commit."
   },
   "plugins": [
     {
@@ -28,9 +28,9 @@
     {
       "name": "landing-cro",
       "source": "./plugins/landing-cro",
-      "description": "Landing pages and conversion: landing-page-generator (Next.js TSX), page-cro, onboarding-cro, copywriting, marketing-psychology.",
+      "description": "Landing pages and conversion: landing-page-generator (Next.js TSX), page-cro, signup-flow-cro, form-cro, onboarding-cro, copywriting, marketing-psychology.",
       "category": "marketing",
-      "keywords": ["landing", "cro", "conversion", "copywriting"]
+      "keywords": ["landing", "cro", "conversion", "copywriting", "signup", "forms"]
     },
     {
       "name": "product",
@@ -42,9 +42,9 @@
     {
       "name": "growth",
       "source": "./plugins/growth",
-      "description": "Growth and marketing: marketing-strategy-pmm, launch-strategy, pricing-strategy, seo-audit, analytics-tracking (GA4/GTM), email-sequence, churn-prevention, app-store-optimization.",
+      "description": "Growth and marketing: marketing-strategy-pmm, launch-strategy, pricing-strategy, seo-audit, programmatic-seo, schema-markup, aeo (AI answer engines), content-strategy, referral-program, analytics-tracking (GA4/GTM), email-sequence, churn-prevention, app-store-optimization.",
       "category": "growth",
-      "keywords": ["growth", "marketing", "seo", "pricing", "launch", "email", "aso"]
+      "keywords": ["growth", "marketing", "seo", "aeo", "schema", "content", "referral", "pricing", "launch", "email", "aso"]
     },
     {
       "name": "engineering",

@@ -5,13 +5,13 @@
 ## Структура
 
 ```
-.claude-plugin/marketplace.json   # манифест маркетплейса (6 плагинов, 44 скилла)
+.claude-plugin/marketplace.json   # манифест маркетплейса (6 плагинов, 51 скилл)
 plugins/
   george-core/   # собственные скиллы (5)
   design/        # дизайн и UX (7)
-  landing-cro/   # лендинги и конверсия (5)
+  landing-cro/   # лендинги и конверсия (7)
   product/       # продукт (6)
-  growth/        # рост и маркетинг (8)
+  growth/        # рост и маркетинг (13)
   engineering/   # инженерия (13)
 sources.lock                      # откуда и с какого SHA свендорены апстрим-скиллы
 scripts/sync_upstream.py          # обновляет вендоренные копии по sources.lock
