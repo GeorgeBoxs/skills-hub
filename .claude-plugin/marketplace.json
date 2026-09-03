@@ -8,7 +8,7 @@
   "homepage": "https://github.com/GeorgeBoxs/skills-hub",
   "repository": "https://github.com/GeorgeBoxs/skills-hub",
   "metadata": {
-    "description": "51 skills in 6 domain plugins. Versions intentionally omitted so consumers auto-update by git SHA on every merged commit."
+    "description": "101 skills in 10 domain plugins. Versions intentionally omitted so consumers auto-update by git SHA on every merged commit."
   },
   "plugins": [
     {
@@ -35,9 +35,9 @@
     {
       "name": "product",
       "source": "./plugins/product",
-      "description": "Product management: product-strategist (OKRs), product-discovery, product-manager-toolkit (RICE, PRDs), product-analytics, experiment-designer (A/B), competitive-teardown.",
+      "description": "Product management: product-strategist (OKRs), product-discovery, product-manager-toolkit (RICE, PRDs), product-analytics, experiment-designer (A/B), competitive-teardown, roadmap-communicator, saas-scaffolder, spec-to-repo.",
       "category": "product",
-      "keywords": ["product", "okr", "prd", "analytics", "experiments"]
+      "keywords": ["product", "okr", "prd", "analytics", "experiments", "roadmap", "saas"]
     },
     {
       "name": "growth",
@@ -52,6 +52,34 @@
       "description": "Engineering: agent-workflow-designer, api-design-reviewer, api-test-suite-builder, ci-cd-pipeline-builder, database-designer, sql-database-assistant, migration-architect, monorepo-navigator, env-secrets-manager, git-worktree-manager, pr-review-expert, spec-driven-workflow, tech-debt-tracker.",
       "category": "engineering",
       "keywords": ["engineering", "api", "database", "ci-cd", "monorepo", "testing", "spec"]
+    },
+    {
+      "name": "business",
+      "source": "./plugins/business",
+      "description": "Business operations: sales-engineer, revenue-operations, customer-success-manager, contract-and-proposal-writer.",
+      "category": "business",
+      "keywords": ["sales", "revops", "customer-success", "contracts", "proposals"]
+    },
+    {
+      "name": "c-level",
+      "source": "./plugins/c-level",
+      "description": "Virtual C-suite (32 skills): 14 role advisors (CEO, CTO, CFO, CMO, COO, CPO, CRO, CHRO, CISO, CAIO, CDO, CCO, general counsel, VP Eng), founder-coach, chief-of-staff, board tooling (board-meeting, board-deck-builder), and strategy ops (scenario-war-room, ma-playbook, intl-expansion, competitive-intel, strategic-alignment, decision-logger, company-os, context-engine, org-health-diagnostic, culture-architect, change-management, internal-narrative, cs-onboard, agent-protocol).",
+      "category": "leadership",
+      "keywords": ["ceo", "cto", "cfo", "founder", "board", "strategy", "advisory", "leadership"]
+    },
+    {
+      "name": "finance",
+      "source": "./plugins/finance",
+      "description": "Finance: financial-analyst, saas-metrics-coach (MRR/ARR/churn/unit economics), stock-analysis.",
+      "category": "finance",
+      "keywords": ["finance", "saas-metrics", "unit-economics", "analysis"]
+    },
+    {
+      "name": "pm",
+      "source": "./plugins/pm",
+      "description": "Project management: senior-pm, scrum-master, meeting-analyzer, team-communications, jira-expert, confluence-expert, atlassian-admin, atlassian-templates.",
+      "category": "project-management",
+      "keywords": ["project-management", "scrum", "jira", "confluence", "meetings"]
     }
   ]
 }

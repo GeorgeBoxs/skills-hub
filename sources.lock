@@ -16,6 +16,10 @@
           "to": "plugins/growth/skills/aeo"
         },
         {
+          "from": "c-level-advisor/skills/agent-protocol",
+          "to": "plugins/c-level/skills/agent-protocol"
+        },
+        {
           "from": "engineering/skills/agent-workflow-designer",
           "to": "plugins/engineering/skills/agent-workflow-designer"
         },
@@ -40,8 +44,56 @@
           "to": "plugins/design/skills/apple-hig-expert"
         },
         {
+          "from": "project-management/skills/atlassian-admin",
+          "to": "plugins/pm/skills/atlassian-admin"
+        },
+        {
+          "from": "project-management/skills/atlassian-templates",
+          "to": "plugins/pm/skills/atlassian-templates"
+        },
+        {
+          "from": "c-level-advisor/skills/board-deck-builder",
+          "to": "plugins/c-level/skills/board-deck-builder"
+        },
+        {
+          "from": "c-level-advisor/skills/board-meeting",
+          "to": "plugins/c-level/skills/board-meeting"
+        },
+        {
           "from": "marketing-skill/skills/brand-guidelines",
           "to": "plugins/design/skills/brand-guidelines"
+        },
+        {
+          "from": "c-level-advisor/skills/ceo-advisor",
+          "to": "plugins/c-level/skills/ceo-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/cfo-advisor",
+          "to": "plugins/c-level/skills/cfo-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/change-management",
+          "to": "plugins/c-level/skills/change-management"
+        },
+        {
+          "from": "c-level-advisor/skills/chief-ai-officer-advisor",
+          "to": "plugins/c-level/skills/chief-ai-officer-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/chief-customer-officer-advisor",
+          "to": "plugins/c-level/skills/chief-customer-officer-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/chief-data-officer-advisor",
+          "to": "plugins/c-level/skills/chief-data-officer-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/chief-of-staff",
+          "to": "plugins/c-level/skills/chief-of-staff"
+        },
+        {
+          "from": "c-level-advisor/skills/chro-advisor",
+          "to": "plugins/c-level/skills/chro-advisor"
         },
         {
           "from": "marketing-skill/skills/churn-prevention",
@@ -52,20 +104,80 @@
           "to": "plugins/engineering/skills/ci-cd-pipeline-builder"
         },
         {
+          "from": "c-level-advisor/skills/ciso-advisor",
+          "to": "plugins/c-level/skills/ciso-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/cmo-advisor",
+          "to": "plugins/c-level/skills/cmo-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/company-os",
+          "to": "plugins/c-level/skills/company-os"
+        },
+        {
+          "from": "c-level-advisor/skills/competitive-intel",
+          "to": "plugins/c-level/skills/competitive-intel"
+        },
+        {
           "from": "product-team/skills/competitive-teardown",
           "to": "plugins/product/skills/competitive-teardown"
+        },
+        {
+          "from": "project-management/skills/confluence-expert",
+          "to": "plugins/pm/skills/confluence-expert"
         },
         {
           "from": "marketing-skill/skills/content-strategy",
           "to": "plugins/growth/skills/content-strategy"
         },
         {
+          "from": "c-level-advisor/skills/context-engine",
+          "to": "plugins/c-level/skills/context-engine"
+        },
+        {
+          "from": "business-growth/skills/contract-and-proposal-writer",
+          "to": "plugins/business/skills/contract-and-proposal-writer"
+        },
+        {
+          "from": "c-level-advisor/skills/coo-advisor",
+          "to": "plugins/c-level/skills/coo-advisor"
+        },
+        {
           "from": "marketing-skill/skills/copywriting",
           "to": "plugins/landing-cro/skills/copywriting"
         },
         {
+          "from": "c-level-advisor/skills/cpo-advisor",
+          "to": "plugins/c-level/skills/cpo-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/cro-advisor",
+          "to": "plugins/c-level/skills/cro-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/cs-onboard",
+          "to": "plugins/c-level/skills/cs-onboard"
+        },
+        {
+          "from": "c-level-advisor/skills/cto-advisor",
+          "to": "plugins/c-level/skills/cto-advisor"
+        },
+        {
+          "from": "c-level-advisor/skills/culture-architect",
+          "to": "plugins/c-level/skills/culture-architect"
+        },
+        {
+          "from": "business-growth/skills/customer-success-manager",
+          "to": "plugins/business/skills/customer-success-manager"
+        },
+        {
           "from": "engineering/skills/database-designer",
           "to": "plugins/engineering/skills/database-designer"
+        },
+        {
+          "from": "c-level-advisor/skills/decision-logger",
+          "to": "plugins/c-level/skills/decision-logger"
         },
         {
           "from": "marketing-skill/skills/email-sequence",
@@ -84,12 +196,36 @@
           "to": "plugins/product/skills/experiment-designer"
         },
         {
+          "from": "finance/skills/financial-analyst",
+          "to": "plugins/finance/skills/financial-analyst"
+        },
+        {
           "from": "marketing-skill/skills/form-cro",
           "to": "plugins/landing-cro/skills/form-cro"
         },
         {
+          "from": "c-level-advisor/skills/founder-coach",
+          "to": "plugins/c-level/skills/founder-coach"
+        },
+        {
+          "from": "c-level-advisor/skills/general-counsel-advisor",
+          "to": "plugins/c-level/skills/general-counsel-advisor"
+        },
+        {
           "from": "engineering/skills/git-worktree-manager",
           "to": "plugins/engineering/skills/git-worktree-manager"
+        },
+        {
+          "from": "c-level-advisor/skills/internal-narrative",
+          "to": "plugins/c-level/skills/internal-narrative"
+        },
+        {
+          "from": "c-level-advisor/skills/intl-expansion",
+          "to": "plugins/c-level/skills/intl-expansion"
+        },
+        {
+          "from": "project-management/skills/jira-expert",
+          "to": "plugins/pm/skills/jira-expert"
         },
         {
           "from": "product-team/skills/landing-page-generator",
@@ -100,12 +236,20 @@
           "to": "plugins/growth/skills/launch-strategy"
         },
         {
+          "from": "c-level-advisor/skills/ma-playbook",
+          "to": "plugins/c-level/skills/ma-playbook"
+        },
+        {
           "from": "marketing-skill/skills/marketing-psychology",
           "to": "plugins/landing-cro/skills/marketing-psychology"
         },
         {
           "from": "marketing-skill/skills/marketing-strategy-pmm",
           "to": "plugins/growth/skills/marketing-strategy-pmm"
+        },
+        {
+          "from": "project-management/skills/meeting-analyzer",
+          "to": "plugins/pm/skills/meeting-analyzer"
         },
         {
           "from": "engineering/skills/migration-architect",
@@ -118,6 +262,10 @@
         {
           "from": "marketing-skill/skills/onboarding-cro",
           "to": "plugins/landing-cro/skills/onboarding-cro"
+        },
+        {
+          "from": "c-level-advisor/skills/org-health-diagnostic",
+          "to": "plugins/c-level/skills/org-health-diagnostic"
         },
         {
           "from": "marketing-skill/skills/page-cro",
@@ -156,12 +304,44 @@
           "to": "plugins/growth/skills/referral-program"
         },
         {
+          "from": "business-growth/skills/revenue-operations",
+          "to": "plugins/business/skills/revenue-operations"
+        },
+        {
+          "from": "product-team/skills/roadmap-communicator",
+          "to": "plugins/product/skills/roadmap-communicator"
+        },
+        {
+          "from": "finance/skills/saas-metrics-coach",
+          "to": "plugins/finance/skills/saas-metrics-coach"
+        },
+        {
+          "from": "product-team/skills/saas-scaffolder",
+          "to": "plugins/product/skills/saas-scaffolder"
+        },
+        {
+          "from": "business-growth/skills/sales-engineer",
+          "to": "plugins/business/skills/sales-engineer"
+        },
+        {
+          "from": "c-level-advisor/skills/scenario-war-room",
+          "to": "plugins/c-level/skills/scenario-war-room"
+        },
+        {
           "from": "marketing-skill/skills/schema-markup",
           "to": "plugins/growth/skills/schema-markup"
         },
         {
+          "from": "project-management/skills/scrum-master",
+          "to": "plugins/pm/skills/scrum-master"
+        },
+        {
           "from": "engineering-team/skills/senior-frontend",
           "to": "plugins/design/skills/senior-frontend"
+        },
+        {
+          "from": "project-management/skills/senior-pm",
+          "to": "plugins/pm/skills/senior-pm"
         },
         {
           "from": "marketing-skill/skills/seo-audit",
@@ -176,8 +356,24 @@
           "to": "plugins/engineering/skills/spec-driven-workflow"
         },
         {
+          "from": "product-team/skills/spec-to-repo",
+          "to": "plugins/product/skills/spec-to-repo"
+        },
+        {
           "from": "engineering/skills/sql-database-assistant",
           "to": "plugins/engineering/skills/sql-database-assistant"
+        },
+        {
+          "from": "finance/skills/stock-analysis",
+          "to": "plugins/finance/skills/stock-analysis"
+        },
+        {
+          "from": "c-level-advisor/skills/strategic-alignment",
+          "to": "plugins/c-level/skills/strategic-alignment"
+        },
+        {
+          "from": "project-management/skills/team-communications",
+          "to": "plugins/pm/skills/team-communications"
         },
         {
           "from": "engineering/skills/tech-debt-tracker",
@@ -190,6 +386,10 @@
         {
           "from": "product-team/skills/ux-researcher-designer",
           "to": "plugins/design/skills/ux-researcher-designer"
+        },
+        {
+          "from": "c-level-advisor/skills/vpe-advisor",
+          "to": "plugins/c-level/skills/vpe-advisor"
         }
       ]
     }

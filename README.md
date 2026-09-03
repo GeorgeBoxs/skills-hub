@@ -5,14 +5,18 @@
 ## Структура
 
 ```
-.claude-plugin/marketplace.json   # манифест маркетплейса (6 плагинов, 51 скилл)
+.claude-plugin/marketplace.json   # манифест маркетплейса (10 плагинов, 101 скилл)
 plugins/
   george-core/   # собственные скиллы (5)
   design/        # дизайн и UX (7)
   landing-cro/   # лендинги и конверсия (7)
-  product/       # продукт (6)
+  product/       # продукт (9)
   growth/        # рост и маркетинг (13)
   engineering/   # инженерия (13)
+  business/      # продажи, revops, customer success (4)
+  c-level/       # виртуальный C-suite и стратегия (32)
+  finance/       # финансы и SaaS-метрики (3)
+  pm/            # проектное управление (8)
 sources.lock                      # откуда и с какого SHA свендорены апстрим-скиллы
 scripts/sync_upstream.py          # обновляет вендоренные копии по sources.lock
 .github/workflows/sync-upstream.yml  # еженедельный синк → PR на ревью
@@ -41,6 +45,10 @@ scripts/sync_upstream.py          # обновляет вендоренные к
 ```
 
 Затем один раз в проекте: `/plugin install george-core@skills-hub` (и остальные бандлы). Скиллы доступны как `george-core:ship-gate`, `engineering:database-designer` и т.д. Репо приватный — потребление работает через ваш локальный git/gh-доступ.
+
+Бизнес-плагины (`business`, `c-level`, `finance`, `pm`) в дефолтный `enabledPlugins`
+шаблона намеренно не входят — ставьте по потребности:
+`/plugin install c-level@skills-hub`.
 
 ## Как это обновляется
 
