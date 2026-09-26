@@ -8,15 +8,15 @@
   "homepage": "https://github.com/GeorgeBoxs/skills-hub",
   "repository": "https://github.com/GeorgeBoxs/skills-hub",
   "metadata": {
-    "description": "101 skills in 10 domain plugins. Versions intentionally omitted so consumers auto-update by git SHA on every merged commit."
+    "description": "102 skills in 10 domain plugins. Versions intentionally omitted so consumers auto-update by git SHA on every merged commit."
   },
   "plugins": [
     {
       "name": "george-core",
       "source": "./plugins/george-core",
-      "description": "Own skills: ship-gate (pre-production audit), agent-harness (bounded agentic loops), handoff (session handoff docs), landing (self-contained HTML landing pages), market-research (TAM/SAM/SOM methodology).",
+      "description": "Own skills: ship-gate (pre-production audit), agent-harness (bounded agentic loops), handoff (session handoff docs), landing (self-contained HTML landing pages), market-research (TAM/SAM/SOM methodology), design-references (real design systems to ground UI work).",
       "category": "core",
-      "keywords": ["ship-gate", "agent-harness", "handoff", "landing", "market-research"]
+      "keywords": ["ship-gate", "agent-harness", "handoff", "landing", "market-research", "design-references"]
     },
     {
       "name": "design",

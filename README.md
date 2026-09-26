@@ -5,9 +5,9 @@ Personal hub of Claude skills: **the single marketplace that all my projects use
 ## Layout
 
 ```
-.claude-plugin/marketplace.json   # marketplace manifest (10 plugins, 101 skills)
+.claude-plugin/marketplace.json   # marketplace manifest (10 plugins, 102 skills)
 plugins/
-  george-core/   # own skills (5)
+  george-core/   # own skills (6)
   design/        # design and UX (7)
   landing-cro/   # landing pages and conversion (7)
   product/       # product (9)
