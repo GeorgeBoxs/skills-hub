@@ -1,12 +1,12 @@
 ---
 name: landing
-description: "Generates a premium single-page HTML landing page with 3D CSS animations, GSAP scroll effects, and mouse-parallax depth. Forcing intake (product + elevator pitch, audience register, brand overrides, tone) locks down positioning before any copy or markup is written, so the page reflects the actual product rather than generic boilerplate. Use whenever the user says 'landing for X', 'create a landing page', 'build a landing page', 'make a landing page for X', 'I need a web page for Y', or provides product/service details and wants a polished website. Also triggers on 'promotional page', 'product page', 'one-pager', 'web presence', 'sales page'. Outputs a single self-contained HTML file (Claude Code) or HTML artifact (Claude.ai). Supports configurable brand colors via CSS custom property overrides."
+description: "Generates a premium single-page HTML landing page with 3D CSS animations, GSAP scroll effects, and mouse-parallax depth. Forcing intake (product + elevator pitch, audience register, brand overrides, tone) locks down positioning before any copy or markup is written, so the page reflects the actual product rather than generic boilerplate. Use whenever the user says 'landing for X', 'create a landing page', 'build a landing page', 'make a landing page for X', 'I need a web page for Y', or provides product/service details and wants a polished website. Also triggers on 'promotional page', 'product page', 'one-pager', 'web presence', 'sales page'. Outputs a single self-contained HTML file (Claude Code) or HTML artifact (Claude.ai). Supports configurable brand colors via CSS custom property overrides, or a palette and type scale adapted from a real reference design system (awesome-design-md)."
 license: MIT
 metadata:
   source_spec: "megaprompts/04-landing-megaprompt.md"
   build_pattern: "Path B (direct conversion)"
   distinct_from: "product-team/skills/landing-page-generator (different output format + optimization target)"
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Landing — Premium HTML Landing Page Generator
@@ -57,13 +57,17 @@ Dependency-ordered. Each question carries explicit "why I'm asking". Stop condit
 
 Forcing choice.
 
-### Q3 (always) — Brand Overrides
+### Q3 (always) — Visual Direction
 
-> **Brand colors / fonts to override the default (dark navy + teal + Inter)? Provide as: primary HEX, accent HEX, optional bg HEX. Or say "default" if you want the polished default.**
+> **Visual direction? Pick one:**
 >
-> *Why I'm asking:* The default is intentionally beautiful, but matching your brand makes the page feel native to your existing site. Even just a primary color override goes a long way.
+> 1. **Your brand** — primary HEX, accent HEX, optional bg HEX (and fonts, if any)
+> 2. **A reference design** — name a product whose look you like, or say "suggest" and I'll pick a fitting real design system
+> 3. **Default** — the polished dark navy + teal + Inter
+>
+> *Why I'm asking:* The default is intentionally beautiful, but matching your brand makes the page feel native to your existing site, and a real reference design brings a proven palette and type scale instead of an invented one. Even just a primary color override goes a long way.
 
-Accept "default" or partial overrides (e.g., just primary). If only primary provided, derive accent algorithmically (lighten / darken).
+Accept partial brand overrides (e.g., just primary): derive accent algorithmically (lighten / darken). For a reference design, follow [Reference-Driven Direction](#reference-driven-direction); on "suggest", choose after Q4 without asking another question.
 
 ### Q4 (depends on Q1) — Tone
 
@@ -125,9 +129,30 @@ If only primary provided, derive accent algorithmically (lighten 15% for accent;
 
 See [`references/brand_system_design.md`](references/brand_system_design.md) for color theory + WCAG + algorithmic palette derivation canon.
 
+### Reference-Driven Direction
+
+When Q3 picks a reference design:
+
+1. **Get the reference.** With the `george-core:design-references` skill available, use its catalog and `scripts/design_brief.py <slug>` for a compact brief. Without it, read `https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/<slug>/DESIGN.md` (slugs are the folder names at `https://github.com/VoltAgent/awesome-design-md/tree/main/design-md`). On "suggest", choose by product category (Q1) and tone (Q4).
+2. **Map its color roles onto the `:root` vars** — by role, not by token name:
+
+   | Reference role | Landing var |
+   |---|---|
+   | page canvas / background | `--navy` |
+   | elevated surface / section band | `--navy-mid` |
+   | primary brand or CTA color | `--teal` (+ `--teal-glow` at 0.12 alpha) |
+   | secondary accent, used sparingly | `--amber` |
+   | main text / ink | `--off-white` |
+
+   A light-canvas reference produces a light page: `--navy` holds the light canvas and `--off-white` the dark ink. The var names stay; their roles flip.
+3. **Validate before generating:** `scripts/brand_palette_validator.py --primary <canvas> --accent <cta> --bg <surface> --text <ink>` must pass WCAG AA; it also derives `--text-muted`, `--card-bg` and `--card-border`.
+4. **Typography:** apply the reference's weight and letter-spacing pattern to the size scale below. When its face is proprietary, load the closest Google Fonts family instead of Inter.
+5. **Adapt, don't clone:** keep the system (palette restraint, type rhythm, radii) but not the identity — no logos, wordmarks, product imagery or signature gradients. The page must read as this product.
+6. **Cite it:** add `<!-- visual reference: <slug> (https://getdesign.md/<slug>/design-md), adapted -->` near the top of the HTML and name the reference in the delivery summary.
+
 ### Typography
 
-- **Font family:** Inter (via Google Fonts)
+- **Font family:** Inter (via Google Fonts) by default; with a reference design, the Google Fonts family closest to the reference's face
 - **Weight scale:** 400 (body), 500 (eyebrow), 600 (links), 700 (subtitle), 800 (H1 + H2)
 - **Size scale:**
   - Hero H1: 68–82px
@@ -265,7 +290,7 @@ CSS handles ambient continuous motion (smoother, cheaper than GSAP for indefinit
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 ```
 
-NO other external CSS or JS files. All custom CSS in `<style>`, all custom JS in `<script>` blocks within the same HTML file.
+With a reference design, swap `family=Inter` for the chosen Google Fonts family and its weights. NO other external CSS or JS files. All custom CSS in `<style>`, all custom JS in `<script>` blocks within the same HTML file.
 
 See [`references/single_file_html_discipline.md`](references/single_file_html_discipline.md) for the inline-only rationale.
 
@@ -309,6 +334,7 @@ Run `scripts/html_validator.py --file ${OUTPUT_DIR}/<slug>.html` after generatio
 | Output dir doesn't exist | Create it |
 | Existing file at output path | Append timestamp suffix or ask user (kebab_slug_generator.py flags duplicates) |
 | html_validator returns FAIL | Regenerate ONLY the failing sections in one targeted pass; do NOT abandon the file |
+| Reference design can't be fetched (offline, bad slug) | Say so; fall back to the default palette or ask for brand HEX. Never attribute invented values to the reference |
 
 ## Portability
 
@@ -328,6 +354,7 @@ Run `scripts/html_validator.py --file ${OUTPUT_DIR}/<slug>.html` after generatio
 - [`references/brand_system_design.md`](references/brand_system_design.md) — color theory + WCAG + algorithmic palette derivation (7+ sources)
 - [`references/gsap_animation_patterns.md`](references/gsap_animation_patterns.md) — entrance timeline + ScrollTrigger reveals + mouse parallax + CSS floats + scroll indicator (7+ sources)
 - [`references/single_file_html_discipline.md`](references/single_file_html_discipline.md) — why inline + CDN-only externals + accessibility minimums + no-build rationale (7+ sources)
+- Reference designs: the `george-core:design-references` skill (catalog of 74 real design systems + brief extractor), sourced from [awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
 
 ## Anti-Patterns To Reject
 
@@ -338,9 +365,10 @@ Run `scripts/html_validator.py --file ${OUTPUT_DIR}/<slug>.html` after generatio
 - Skipping `gsap.set()` initial states (causes FOUC)
 - More than 6 features in default grid (becomes unscannable)
 - Brand-specific content references in the skill itself
+- Cloning a reference design's identity (logo, wordmark, product imagery, signature gradient) instead of adapting its system
 
 ---
 
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Source spec:** [`megaprompts/04-landing-megaprompt.md`](../../../../megaprompts/04-landing-megaprompt.md)
 **Build pattern:** Path B (direct conversion). Distinct from `product-team/skills/landing-page-generator/`.
