@@ -1,30 +1,30 @@
 # skills-hub
 
-Личный хаб Claude-скиллов: **единственный marketplace, который подключают все мои проекты**. Здесь живут собственные скиллы и курированные копии из апстрим-репозиториев. Merge в `main` = релиз для всех проектов (автообновление marketplace).
+Personal hub of Claude skills: **the single marketplace that all my projects use**. It holds my own skills plus curated copies from upstream repositories. A merge to `main` is a release for every project (the marketplace auto-updates).
 
-## Структура
+## Layout
 
 ```
-.claude-plugin/marketplace.json   # манифест маркетплейса (10 плагинов, 101 скилл)
+.claude-plugin/marketplace.json   # marketplace manifest (10 plugins, 101 skills)
 plugins/
-  george-core/   # собственные скиллы (5)
-  design/        # дизайн и UX (7)
-  landing-cro/   # лендинги и конверсия (7)
-  product/       # продукт (9)
-  growth/        # рост и маркетинг (13)
-  engineering/   # инженерия (13)
-  business/      # продажи, revops, customer success (4)
-  c-level/       # виртуальный C-suite и стратегия (32)
-  finance/       # финансы и SaaS-метрики (3)
-  pm/            # проектное управление (8)
-sources.lock                      # откуда и с какого SHA свендорены апстрим-скиллы
-scripts/sync_upstream.py          # обновляет вендоренные копии по sources.lock
-.github/workflows/sync-upstream.yml  # еженедельный синк → PR на ревью
+  george-core/   # own skills (5)
+  design/        # design and UX (7)
+  landing-cro/   # landing pages and conversion (7)
+  product/       # product (9)
+  growth/        # growth and marketing (13)
+  engineering/   # engineering (13)
+  business/      # sales, revops, customer success (4)
+  c-level/       # virtual C-suite and strategy (32)
+  finance/       # finance and SaaS metrics (3)
+  pm/            # project management (8)
+sources.lock                      # where the vendored upstream skills come from, pinned to a SHA
+scripts/sync_upstream.py          # refreshes the vendored copies per sources.lock
+.github/workflows/sync-upstream.yml  # weekly sync → PR for review
 ```
 
-## Как подключить в проект
+## Using it in a project
 
-В `.claude/settings.json` проекта (в шаблоне уже есть):
+In the project's `.claude/settings.json` (the project template already includes this):
 
 ```json
 {
@@ -44,25 +44,25 @@ scripts/sync_upstream.py          # обновляет вендоренные к
 }
 ```
 
-Затем один раз в проекте: `/plugin install george-core@skills-hub` (и остальные бандлы). Скиллы доступны как `george-core:ship-gate`, `engineering:database-designer` и т.д. Репо приватный — потребление работает через ваш локальный git/gh-доступ.
+Then, once per project: `/plugin install george-core@skills-hub` (and the other bundles). Skills are available as `george-core:ship-gate`, `engineering:database-designer`, and so on. The repo is private — consuming it works through your local git/gh access.
 
-Бизнес-плагины (`business`, `c-level`, `finance`, `pm`) в дефолтный `enabledPlugins`
-шаблона намеренно не входят — ставьте по потребности:
+The business plugins (`business`, `c-level`, `finance`, `pm`) are intentionally left out of the
+template's default `enabledPlugins` — install them as needed:
 `/plugin install c-level@skills-hub`.
 
-## Как это обновляется
+## How updates flow
 
-- **Апстрим → хаб**: workflow `sync-upstream` (понедельник 06:00 UTC или вручную через *Run workflow*) клонирует апстримы из `sources.lock`, заменяет вендоренные копии, бампает SHA и открывает PR. Ревью диффа — единственное ручное действие. `SYNC_NOTES.md` (он же описание PR) показывает предупреждения (например, скилл удалён апстримом) и новые скиллы апстрима с описаниями.
-- **Новые скиллы апстрима** сами не подключаются: синк обновляет только то, что есть в маппингах `sources.lock`. Приглянулся кандидат из `SYNC_NOTES.md` → добавить маппинг в `sources.lock` и перезапустить `scripts/sync_upstream.py`.
-- **Хаб → проекты**: ничего делать не нужно. Версии у плагинов намеренно не проставлены — Claude Code трекает их по git SHA, поэтому каждый merge в `main` автоматически доезжает до потребителей; форсировать можно командой `/plugin update`.
+- **Upstream → hub**: the `sync-upstream` workflow (Mondays 06:00 UTC, or manually via *Run workflow*) clones the upstreams from `sources.lock`, replaces the vendored copies, bumps the SHA and opens a PR. Reviewing the diff is the only manual step. `SYNC_NOTES.md` (also used as the PR description) shows warnings (e.g. a skill removed upstream) and new upstream skills with their descriptions.
+- **New upstream skills** are not picked up automatically: the sync only refreshes what is mapped in `sources.lock`. To take a candidate from `SYNC_NOTES.md`, add its mapping to `sources.lock` and re-run `scripts/sync_upstream.py`.
+- **Hub → projects**: nothing to do. Plugin versions are intentionally omitted — Claude Code tracks plugins by git SHA, so every merge to `main` reaches consumers automatically; `/plugin update` forces it.
 
-## Правила
+## Rules
 
-- **Не редактировать** вендоренные скиллы — сейчас это все плагины, кроме `george-core` (точный список — поля `to` в `sources.lock`); их перезапишет синк. Нужна правка → либо убрать маппинг из `sources.lock` (скилл становится «своим»), либо контрибьютить в апстрим.
-- Свои скиллы кладутся в `plugins/george-core/skills/<имя>/SKILL.md` (или новый плагин + запись в `marketplace.json`).
-- Новый апстрим-источник = новая запись в `sources.lock` (repo, branch, sha, mappings).
-- Репо-специфичные скиллы (типа `repo-conventions`) сюда **не** переносятся — они живут в `.claude/skills/` своих проектов.
+- **Don't edit** vendored skills — currently every plugin except `george-core` (the exact list is the `to` fields in `sources.lock`); the sync overwrites them. Need a change → either remove the mapping from `sources.lock` (the skill becomes your own) or contribute upstream.
+- Own skills go in `plugins/george-core/skills/<name>/SKILL.md` (or a new plugin + an entry in `marketplace.json`).
+- A new upstream source = a new entry in `sources.lock` (repo, branch, sha, mappings).
+- Repo-specific skills (such as `repo-conventions`) do **not** belong here — they live in their own project's `.claude/skills/`.
 
-## Лицензии
+## Licenses
 
-Вендоренные скиллы — MIT из [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills), см. `THIRD_PARTY_NOTICES.md` и точный пин в `sources.lock`.
+The vendored skills are MIT-licensed, from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills); see `THIRD_PARTY_NOTICES.md` and the exact pin in `sources.lock`.
