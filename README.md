@@ -33,14 +33,14 @@ In the project's `.claude/settings.json` (the project template already includes 
       "source": { "source": "github", "repo": "GeorgeBoxs/skills-hub" }
     }
   },
-  "enabledPlugins": [
-    "george-core@skills-hub",
-    "design@skills-hub",
-    "landing-cro@skills-hub",
-    "product@skills-hub",
-    "growth@skills-hub",
-    "engineering@skills-hub"
-  ]
+  "enabledPlugins": {
+    "george-core@skills-hub": true,
+    "design@skills-hub": true,
+    "landing-cro@skills-hub": true,
+    "product@skills-hub": true,
+    "growth@skills-hub": true,
+    "engineering@skills-hub": true
+  }
 }
 ```
 
