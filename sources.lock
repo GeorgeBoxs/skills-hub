@@ -390,8 +390,56 @@
         {
           "from": "c-level-advisor/skills/vpe-advisor",
           "to": "plugins/c-level/skills/vpe-advisor"
+        },
+        {
+          "from": "engineering-team/skills/ai-security",
+          "to": "plugins/security/skills/ai-security"
+        },
+        {
+          "from": "engineering-team/skills/cloud-security",
+          "to": "plugins/security/skills/cloud-security"
+        },
+        {
+          "from": "engineering-team/skills/incident-commander",
+          "to": "plugins/security/skills/incident-commander"
+        },
+        {
+          "from": "engineering-team/skills/incident-response",
+          "to": "plugins/security/skills/incident-response"
+        },
+        {
+          "from": "engineering-team/skills/red-team",
+          "to": "plugins/security/skills/red-team"
+        },
+        {
+          "from": "engineering-team/skills/security-pen-testing",
+          "to": "plugins/security/skills/security-pen-testing"
+        },
+        {
+          "from": "engineering-team/skills/senior-secops",
+          "to": "plugins/security/skills/senior-secops"
+        },
+        {
+          "from": "engineering-team/skills/senior-security",
+          "to": "plugins/security/skills/senior-security"
+        },
+        {
+          "from": "engineering-team/skills/threat-detection",
+          "to": "plugins/security/skills/threat-detection"
+        },
+        {
+          "from": "engineering/skills/skill-security-auditor",
+          "to": "plugins/security/skills/skill-security-auditor"
         }
       ]
+    },
+    {
+      "name": "awesome-design-md",
+      "repo": "https://github.com/VoltAgent/awesome-design-md.git",
+      "branch": "main",
+      "kind": "design-catalog",
+      "sha": "f6961238d5cddcf8042a74a70fc400ec67181abb",
+      "mappings": []
     }
   ]
 }

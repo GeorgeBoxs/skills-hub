@@ -10,6 +10,7 @@ vendor. Results are summarized in SYNC_NOTES.md so the sync PR diff carries
 its own review notes. Stdlib only; requires git.
 """
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -70,6 +71,37 @@ def describe(skill_md: Path) -> str:
     return textwrap.shorten(text, 200, placeholder="…") or "(no description)"
 
 
+def sync_design_catalog(clone: Path, repo: str, source_name: str, new_sha: str) -> int:
+    """Build a stable catalog from actual designs, including README-unlisted ones."""
+    designs = sorted((clone / "design-md").glob("*/DESIGN.md"))
+    if not designs:
+        raise ValueError(f"No DESIGN.md files found in {repo}")
+    rows = {}
+    category = "Other designs"
+    for line in (clone / "README.md").read_text().splitlines():
+        if line.startswith("### "):
+            category = line[4:]
+        match = re.match(r"- \[\*\*(.*?)\*\*\]\(https://getdesign.md/([^/]+)/design-md\)\s*-\s*(.*)", line)
+        if match:
+            name, slug, style = match.groups()
+            rows[slug] = (category, name, style)
+    groups = {}
+    for design in designs:
+        slug = design.parent.name
+        group, name, style = rows.get(slug, ("Other designs", slug, describe(design)))
+        legacy = " *legacy*" if not design.read_text().startswith("---") else ""
+        groups.setdefault(group, []).append(
+            f"| {name.replace('|', '&#124;')} | `{slug}`{legacy} | {style.replace('|', '&#124;')} |"
+        )
+    catalog = ["# Design reference catalog", "",
+        f"Synced from [{source_name}]({repo.removesuffix('.git')}) at `{new_sha[:7]}`: {len(designs)} designs. Updated by the weekly upstream sync. MIT © 2026 VoltAgent.", "",
+        "Read a brief with `python scripts/design_brief.py <slug>`. DESIGN.md files are fetched on demand; *legacy* marks files without token front matter.", ""]
+    for group, entries in groups.items():
+        catalog += [f"## {group}", "", "| Design | Slug | Style |", "|---|---|---|", *entries, ""]
+    (ROOT / "plugins/george-core/skills/design-references/references/catalog.md").write_text("\n".join(catalog))
+    return len(designs)
+
+
 def main() -> int:
     lock = json.loads(LOCK_PATH.read_text())
     notes: list[str] = []
@@ -83,6 +115,12 @@ def main() -> int:
             run("git", "clone", "--depth", "1", "--branch", branch, repo, tmp)
             new_sha = run("git", "-C", tmp, "rev-parse", "HEAD")
             old_sha = source.get("sha", "")
+
+            if source.get("kind") == "design-catalog":
+                count = sync_design_catalog(Path(tmp), repo, source["name"], new_sha)
+                source["sha"] = new_sha
+                notes.append(f"{repo}: `{old_sha[:7] or 'none'}` → `{new_sha[:7]}` ({count} design references)")
+                continue
 
             for mapping in source["mappings"]:
                 src = Path(tmp) / mapping["from"]

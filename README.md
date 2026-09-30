@@ -1,17 +1,18 @@
 # skills-hub
 
-Personal hub of Claude skills: **the single marketplace that all my projects use**. It holds my own skills plus curated copies from upstream repositories. A merge to `main` is a release for every project (the marketplace auto-updates).
+Personal hub of Claude Code and Codex skills: **the single marketplace that all my projects use**. It holds my own skills plus curated copies from upstream repositories. A merge to `main` is a release for every project (installed plugins follow it when updates are enabled).
 
 ## Layout
 
 ```
-.claude-plugin/marketplace.json   # marketplace manifest (10 plugins, 101 skills)
+.claude-plugin/marketplace.json   # marketplace manifest (11 plugins, 112 skills)
 plugins/
-  george-core/   # own skills (5)
+  george-core/   # own skills (6)
   design/        # design and UX (7)
   landing-cro/   # landing pages and conversion (7)
   product/       # product (9)
   growth/        # growth and marketing (13)
+  security/      # cybersecurity (10)
   engineering/   # engineering (13)
   business/      # sales, revops, customer success (4)
   c-level/       # virtual C-suite and strategy (32)
@@ -30,7 +31,8 @@ In the project's `.claude/settings.json` (the project template already includes 
 {
   "extraKnownMarketplaces": {
     "skills-hub": {
-      "source": { "source": "github", "repo": "GeorgeBoxs/skills-hub" }
+      "source": { "source": "github", "repo": "GeorgeBoxs/skills-hub" },
+      "autoUpdate": true
     }
   },
   "enabledPlugins": {
@@ -39,7 +41,8 @@ In the project's `.claude/settings.json` (the project template already includes 
     "landing-cro@skills-hub": true,
     "product@skills-hub": true,
     "growth@skills-hub": true,
-    "engineering@skills-hub": true
+    "engineering@skills-hub": true,
+    "security@skills-hub": true
   }
 }
 ```
@@ -54,7 +57,8 @@ template's default `enabledPlugins` — install them as needed:
 
 - **Upstream → hub**: the `sync-upstream` workflow (Mondays 06:00 UTC, or manually via *Run workflow*) clones the upstreams from `sources.lock`, replaces the vendored copies, bumps the SHA and opens a PR. Reviewing the diff is the only manual step. `SYNC_NOTES.md` (also used as the PR description) shows warnings (e.g. a skill removed upstream) and new upstream skills with their descriptions.
 - **New upstream skills** are not picked up automatically: the sync only refreshes what is mapped in `sources.lock`. To take a candidate from `SYNC_NOTES.md`, add its mapping to `sources.lock` and re-run `scripts/sync_upstream.py`.
-- **Hub → projects**: nothing to do. Plugin versions are intentionally omitted — Claude Code tracks plugins by git SHA, so every merge to `main` reaches consumers automatically; `/plugin update` forces it.
+- **Design references**: the same workflow refreshes the awesome-design-md catalog; full DESIGN.md files are read on demand.
+- **Hub → projects**: Enable auto-update for `skills-hub` in Claude Code’s plugin manager. Installed plugins then follow reviewed commits on `main`; reload plugins or start a new session after updating. Codex uses its own marketplace and cache: refresh with `codex plugin marketplace upgrade skills-hub` and install/update the desired plugins with `codex plugin add <name>@skills-hub`.
 
 ## Rules
 
