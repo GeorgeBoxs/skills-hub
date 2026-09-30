@@ -8,78 +8,165 @@
   "homepage": "https://github.com/GeorgeBoxs/skills-hub",
   "repository": "https://github.com/GeorgeBoxs/skills-hub",
   "metadata": {
-    "description": "101 skills in 10 domain plugins. Versions intentionally omitted so consumers auto-update by git SHA on every merged commit."
+    "description": "112 skills in 11 domain plugins. Updates follow reviewed commits on main; enable marketplace auto-update in your agent."
   },
   "plugins": [
     {
       "name": "george-core",
       "source": "./plugins/george-core",
-      "description": "Own skills: ship-gate (pre-production audit), agent-harness (bounded agentic loops), handoff (session handoff docs), landing (self-contained HTML landing pages), market-research (TAM/SAM/SOM methodology).",
+      "description": "Own skills: ship-gate (pre-production audit), agent-harness (bounded agentic loops), handoff (session handoff docs), landing (self-contained HTML landing pages), market-research (TAM/SAM/SOM methodology), design-references (real design systems to ground UI work).",
       "category": "core",
-      "keywords": ["ship-gate", "agent-harness", "handoff", "landing", "market-research"]
+      "keywords": [
+        "ship-gate",
+        "agent-harness",
+        "handoff",
+        "landing",
+        "market-research",
+        "design-references"
+      ]
     },
     {
       "name": "design",
       "source": "./plugins/design",
       "description": "Design and UX: epic-design (cinematic scroll/motion), brand-guidelines, ui-design-system, ux-researcher-designer, apple-hig-expert, a11y-audit (WCAG 2.2 AA), senior-frontend.",
       "category": "design",
-      "keywords": ["design", "ux", "a11y", "frontend", "hig", "design-system"]
+      "keywords": [
+        "design",
+        "ux",
+        "a11y",
+        "frontend",
+        "hig",
+        "design-system"
+      ]
     },
     {
       "name": "landing-cro",
       "source": "./plugins/landing-cro",
       "description": "Landing pages and conversion: landing-page-generator (Next.js TSX), page-cro, signup-flow-cro, form-cro, onboarding-cro, copywriting, marketing-psychology.",
       "category": "marketing",
-      "keywords": ["landing", "cro", "conversion", "copywriting", "signup", "forms"]
+      "keywords": [
+        "landing",
+        "cro",
+        "conversion",
+        "copywriting",
+        "signup",
+        "forms"
+      ]
     },
     {
       "name": "product",
       "source": "./plugins/product",
       "description": "Product management: product-strategist (OKRs), product-discovery, product-manager-toolkit (RICE, PRDs), product-analytics, experiment-designer (A/B), competitive-teardown, roadmap-communicator, saas-scaffolder, spec-to-repo.",
       "category": "product",
-      "keywords": ["product", "okr", "prd", "analytics", "experiments", "roadmap", "saas"]
+      "keywords": [
+        "product",
+        "okr",
+        "prd",
+        "analytics",
+        "experiments",
+        "roadmap",
+        "saas"
+      ]
     },
     {
       "name": "growth",
       "source": "./plugins/growth",
       "description": "Growth and marketing: marketing-strategy-pmm, launch-strategy, pricing-strategy, seo-audit, programmatic-seo, schema-markup, aeo (AI answer engines), content-strategy, referral-program, analytics-tracking (GA4/GTM), email-sequence, churn-prevention, app-store-optimization.",
       "category": "growth",
-      "keywords": ["growth", "marketing", "seo", "aeo", "schema", "content", "referral", "pricing", "launch", "email", "aso"]
+      "keywords": [
+        "growth",
+        "marketing",
+        "seo",
+        "aeo",
+        "schema",
+        "content",
+        "referral",
+        "pricing",
+        "launch",
+        "email",
+        "aso"
+      ]
     },
     {
       "name": "engineering",
       "source": "./plugins/engineering",
       "description": "Engineering: agent-workflow-designer, api-design-reviewer, api-test-suite-builder, ci-cd-pipeline-builder, database-designer, sql-database-assistant, migration-architect, monorepo-navigator, env-secrets-manager, git-worktree-manager, pr-review-expert, spec-driven-workflow, tech-debt-tracker.",
       "category": "engineering",
-      "keywords": ["engineering", "api", "database", "ci-cd", "monorepo", "testing", "spec"]
+      "keywords": [
+        "engineering",
+        "api",
+        "database",
+        "ci-cd",
+        "monorepo",
+        "testing",
+        "spec"
+      ]
     },
     {
       "name": "business",
       "source": "./plugins/business",
       "description": "Business operations: sales-engineer, revenue-operations, customer-success-manager, contract-and-proposal-writer.",
       "category": "business",
-      "keywords": ["sales", "revops", "customer-success", "contracts", "proposals"]
+      "keywords": [
+        "sales",
+        "revops",
+        "customer-success",
+        "contracts",
+        "proposals"
+      ]
     },
     {
       "name": "c-level",
       "source": "./plugins/c-level",
       "description": "Virtual C-suite (32 skills): 14 role advisors (CEO, CTO, CFO, CMO, COO, CPO, CRO, CHRO, CISO, CAIO, CDO, CCO, general counsel, VP Eng), founder-coach, chief-of-staff, board tooling (board-meeting, board-deck-builder), and strategy ops (scenario-war-room, ma-playbook, intl-expansion, competitive-intel, strategic-alignment, decision-logger, company-os, context-engine, org-health-diagnostic, culture-architect, change-management, internal-narrative, cs-onboard, agent-protocol).",
       "category": "leadership",
-      "keywords": ["ceo", "cto", "cfo", "founder", "board", "strategy", "advisory", "leadership"]
+      "keywords": [
+        "ceo",
+        "cto",
+        "cfo",
+        "founder",
+        "board",
+        "strategy",
+        "advisory",
+        "leadership"
+      ]
     },
     {
       "name": "finance",
       "source": "./plugins/finance",
       "description": "Finance: financial-analyst, saas-metrics-coach (MRR/ARR/churn/unit economics), stock-analysis.",
       "category": "finance",
-      "keywords": ["finance", "saas-metrics", "unit-economics", "analysis"]
+      "keywords": [
+        "finance",
+        "saas-metrics",
+        "unit-economics",
+        "analysis"
+      ]
     },
     {
       "name": "pm",
       "source": "./plugins/pm",
       "description": "Project management: senior-pm, scrum-master, meeting-analyzer, team-communications, jira-expert, confluence-expert, atlassian-admin, atlassian-templates.",
       "category": "project-management",
-      "keywords": ["project-management", "scrum", "jira", "confluence", "meetings"]
+      "keywords": [
+        "project-management",
+        "scrum",
+        "jira",
+        "confluence",
+        "meetings"
+      ]
+    },
+    {
+      "name": "security",
+      "source": "./plugins/security",
+      "description": "Cybersecurity: threat modeling, cloud and AI security, incident response, threat detection, penetration testing, red-team reviews and skill auditing.",
+      "category": "security",
+      "keywords": [
+        "security",
+        "cybersecurity",
+        "incident-response",
+        "threat-modeling"
+      ]
     }
   ]
 }
