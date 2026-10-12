@@ -1,6 +1,6 @@
 # Design reference catalog
 
-Synced from [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) at `f696123`: 74 designs. Updated by the weekly upstream sync. MIT © 2026 VoltAgent.
+Synced from [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) at `13be5c0`: 74 designs. Updated by the weekly upstream sync. MIT © 2026 VoltAgent.
 
 Read a brief with `python scripts/design_brief.py <slug>`. DESIGN.md files are fetched on demand; *legacy* marks files without token front matter.
 
