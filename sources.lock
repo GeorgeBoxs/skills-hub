@@ -5,7 +5,7 @@
       "name": "alirezarezvani-claude-skills",
       "repo": "https://github.com/alirezarezvani/claude-skills.git",
       "branch": "main",
-      "sha": "19392f7a08264ed00486a251f5b2098321771f94",
+      "sha": "6d2f02ea077eead1bee5411a31bcc6db5a11a70c",
       "mappings": [
         {
           "from": "engineering-team/a11y-audit/skills/a11y-audit",
@@ -438,7 +438,7 @@
       "repo": "https://github.com/VoltAgent/awesome-design-md.git",
       "branch": "main",
       "kind": "design-catalog",
-      "sha": "f6961238d5cddcf8042a74a70fc400ec67181abb",
+      "sha": "3b605329240ce735b510037cca322f1831fdd7f8",
       "mappings": []
     }
   ]
